@@ -12,6 +12,8 @@ def init():
     # new_class(8)
     # new_class(9)
     # new_user("Anton", "Vityuk", 3, "", "Кря!", "vityuka05@mail.ru", "1147labuda")
+    # new_theme("Комбинаторка", 1)  # - пробное
+    # new_task("a", 1, 1, "b", "c", 'static/tasks_img/a/a.jpeg')  # - пробное
 
 
 def main():
