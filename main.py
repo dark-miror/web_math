@@ -1,12 +1,21 @@
 from flask import Flask
 from data import db_session
+from add_to_db import *
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['SECRET_KEY'] = 'aboba_secret_key'
+
+
+def init():
+    db_session.global_init("db/web_math.db")
+    # new_class(7)
+    # new_class(8)
+    # new_class(9)
+    # new_user("Anton", "Vityuk", 3, "", "Кря!", "vityuka05@mail.ru", "1147labuda")
 
 
 def main():
-    # db_session.global_init("db/web_math.db")
+    init()
     app.run()
 
 
