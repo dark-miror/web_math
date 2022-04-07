@@ -2,6 +2,10 @@ from flask import Flask, render_template, redirect, request, abort, make_respons
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
 from data import db_session
+from data.db_table_files.users import User
+from data.db_table_files.classes import Classes
+from data.db_table_files.themes import Theme
+from data.db_table_files.tasks import Task
 from add_to_db import *
 from forms.login import LoginForm
 from forms.register import RegisterForm
@@ -85,7 +89,7 @@ def reqister():
         if db_sess.query(User).filter(User.email == form.email.data).first():
             return render_template('register.html', form=form,
                                    message="Такой пользователь уже есть")
-        new_user(form.name.data, form.surname.data, form.class_num, "", form.about.data,
+        new_user(form.name.data, form.surname.data, form.class_num.data, "", form.about.data,
                  form.email.data, form.password.data)
         return redirect('/login')
     return render_template('register.html', form=form)
