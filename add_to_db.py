@@ -36,10 +36,10 @@ def new_theme(name, class_id):
 
 
 def new_class(number):
-    Class = Classes()
-    Class.number = number
+    class_ = Classes()
+    class_.number = number
     db_sess = db_session.create_session()
-    db_sess.add(Class)
+    db_sess.add(class_)
     db_sess.commit()
 
 
