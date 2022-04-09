@@ -28,9 +28,10 @@ def init():
     # new_class(7)
     # new_class(8)
     # new_class(9)
-    # new_user("Anton", "Vityuk", 3, "", "Кря!", "vityuka05@mail.ru", "1147labuda")
+    # new_user("Anton", "Vityuk", "Кря!", "vityuka05@mail.ru", "1147labuda")
     # new_theme("Комбинаторка", 1)  # - пробное
-    # new_task("a", 1, 1, "b", "c", 'static/tasks_img/a/a.jpeg')  # - пробное
+    # new_task("a", 1, False)  # - пробное
+    # new_theme("Линейное уравнение с одной переменной. Решение задач с помощью уравнений", 1)
 
 
 def main():
@@ -51,6 +52,7 @@ def not_found(error):
 
 @app.route("/")
 def index():
+    return render_template("theory/1.html")
     if current_user.is_authenticated:
         db_sess = db_session.create_session()
         # jobs = db_sess.query(Jobs).all()
