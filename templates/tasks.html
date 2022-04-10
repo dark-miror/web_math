@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in tasks%}
+    <br>
+    <a class="btn btn-warning" href="task/{{item.id}}"> Задача {{loop.index1}} </a>
+{% endfor %}
+
+{% endblock %}

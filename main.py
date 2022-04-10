@@ -50,16 +50,6 @@ def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
 
-@app.route("/")
-def index():
-    return render_template("theory/1.html")
-    if current_user.is_authenticated:
-        db_sess = db_session.create_session()
-        # jobs = db_sess.query(Jobs).all()
-        return render_template("index.html")
-    return redirect('/login')
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -91,10 +81,53 @@ def reqister():
         if db_sess.query(User).filter(User.email == form.email.data).first():
             return render_template('register.html', form=form,
                                    message="Такой пользователь уже есть")
-        new_user(form.name.data, form.surname.data, form.class_num.data, "", form.about.data,
-                 form.email.data, form.password.data)
+        new_user(form.name.data, form.surname.data, form.about.data, form.email.data,
+                 form.password.data)
         return redirect('/login')
     return render_template('register.html', form=form)
+
+
+@app.route("/")
+def index():
+    if current_user.is_authenticated:
+        db_sess = db_session.create_session()
+        classes = db_sess.query(Classes).all()
+        return render_template("index.html", classes=classes)
+    return redirect('/login')
+
+
+@app.route('/theme_choice/<int:id>')  # <int:id> – id класса
+@login_required
+def theme_choice(id):
+    db_sess = db_session.create_session()
+    themes = db_sess.query(Theme).filter(Theme.class_id == id).all()
+    return render_template('theme.html', themes=themes)
+
+
+@app.route('/theme_choice/type_work/<int:id>')  # <int:id> – id темы
+@login_required
+def type_work(id):
+    return render_template('type_work.html', theme_id=id)
+
+
+@app.route('/theme_choice/type_work/theory/<int:id>')  # <int:id> – id темы
+@login_required
+def theory(id):
+    return render_template(f"theory/{id}.html", theme_id=id)
+
+
+@app.route('/theme_choice/type_work/tasks/<int:id>')  # <int:id> – id темы
+@login_required
+def task_choice(id):
+    db_sess = db_session.create_session()
+    tasks = db_sess.query(Task).filter(Task.theme_id == id).all()
+    return render_template('tasks.html', tasks=tasks)
+
+
+@app.route('/theme_choice/type_work/tasks/task/<int:id>')  # <int:id> – id задачи
+@login_required
+def task(id):
+    return render_template(f'tasks/{id}.html')
 
 
 if __name__ == '__main__':

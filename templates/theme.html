@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in themes%}
+    <br>
+    <a class="btn btn-warning" href="type_work/{{item.id}}"> {{item.title}} </a>
+{% endfor %}
+
+{% endblock %}
