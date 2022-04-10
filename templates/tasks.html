@@ -2,9 +2,14 @@
 
 {% block content %}
 
+<br><a href="/theme_choice/type_work/{{tasks[0].theme_id}}" class="btn btn-warning">Вернуться</a><br>
+
 {% for item in tasks%}
     <br>
-    <a class="btn btn-warning" href="task/{{item.id}}"> Задача {{loop.index1}} </a>
+    <a class="btn btn-warning" href="task/{{item.id}}"> {{item.title}} </a>
+    <br>
 {% endfor %}
+
+<br><a href="/theme_choice/type_work/{{tasks[0].theme_id}}" class="btn btn-warning">Вернуться</a><br>
 
 {% endblock %}

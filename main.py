@@ -32,6 +32,7 @@ def init():
     # new_theme("Комбинаторка", 1)  # - пробное
     # new_task("a", 1, False)  # - пробное
     # new_theme("Линейное уравнение с одной переменной. Решение задач с помощью уравнений", 1)
+    # new_task("Решение уравнений (1)", 1, 0)
 
 
 def main():
@@ -107,7 +108,9 @@ def theme_choice(id):
 @app.route('/theme_choice/type_work/<int:id>')  # <int:id> – id темы
 @login_required
 def type_work(id):
-    return render_template('type_work.html', theme_id=id)
+    db_sess = db_session.create_session()
+    theme = db_sess.query(Theme).filter(Theme.id == id).first()
+    return render_template('type_work.html', theme=theme)
 
 
 @app.route('/theme_choice/type_work/theory/<int:id>')  # <int:id> – id темы
@@ -127,7 +130,9 @@ def task_choice(id):
 @app.route('/theme_choice/type_work/tasks/task/<int:id>')  # <int:id> – id задачи
 @login_required
 def task(id):
-    return render_template(f'tasks/{id}.html')
+    db_sess = db_session.create_session()
+    task = db_sess.query(Task).filter(Task.id == id).first()
+    return render_template(f'tasks/{id}.html', task=task)
 
 
 if __name__ == '__main__':

@@ -2,9 +2,14 @@
 
 {% block content %}
 
+<br>
+<a href="/" class="btn btn-warning">Вернуться</a><br>
+
 {% for item in themes%}
     <br>
     <a class="btn btn-warning" href="type_work/{{item.id}}"> {{item.title}} </a>
+    <br>
 {% endfor %}
 
+<br><a href="/" class="btn btn-warning">Вернуться</a><br>
 {% endblock %}

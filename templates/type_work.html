@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<br>
-<a class="btn btn-warning" href="theory/{{theme_id}}"> Теория </a>
-<br>
-<a class="btn btn-warning" href="tasks/{{theme_id}}"> Задачи </a>
+<br><a href="/theme_choice/{{theme.class_id}}" class="btn btn-warning">Вернуться</a><br>
+<br><a class="btn btn-warning" href="theory/{{theme.id}}"> Теория </a><br>
+<br><a class="btn btn-warning" href="tasks/{{theme.id}}"> Задачи </a><br>
+<br><a href="/theme_choice/{{theme.class_id}}" class="btn btn-warning">Вернуться</a><br>
 
 {% endblock %}
