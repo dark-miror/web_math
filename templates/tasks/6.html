@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-warning">Вернуться</a><br>
+
+<br><h4>Решите уравнения:</h4>
+<h5><span class="math inline">1) \(||x|-3|=5\);</span></h5>
+<h5><span class="math inline">2) \(\frac{4x^2+5x}{14}+\frac{10-2x^2}{7}=5\);</span></h5>
+<h5><span class="math inline">3) \(\frac{x}{7}+\frac{3x-1}{14}=\frac{x}{3}\).</span></h5>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

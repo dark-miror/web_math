@@ -5,6 +5,18 @@ from data.db_table_files.tasks import Task
 from data import db_session
 
 
+def init():
+    db_session.global_init("db/web_math.db")
+    # new_class(7)
+    # new_class(8)
+    # new_class(9)
+    # new_user("Anton", "Vityuk", "Кря!", "vityuka05@mail.ru", "1147labuda")
+    # new_theme("Комбинаторка", 1)  # - пробное
+    # new_task("a", 1, False)  # - пробное
+    # new_theme("Линейное уравнение с одной переменной. Решение задач с помощью уравнений", 1)
+    # new_task("Решение уравнений (1)", 1, 0)
+
+
 def new_task(title, theme_id, task_test):
     task = Task()
     task.title = title

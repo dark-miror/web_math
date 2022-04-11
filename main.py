@@ -23,21 +23,9 @@ def clear_table(table):
     db_sess.commit()
 
 
-def init():
-    db_session.global_init("db/web_math.db")
-    # new_class(7)
-    # new_class(8)
-    # new_class(9)
-    # new_user("Anton", "Vityuk", "Кря!", "vityuka05@mail.ru", "1147labuda")
-    # new_theme("Комбинаторка", 1)  # - пробное
-    # new_task("a", 1, False)  # - пробное
-    # new_theme("Линейное уравнение с одной переменной. Решение задач с помощью уравнений", 1)
-    # new_task("Решение уравнений (1)", 1, 0)
-
-
 def main():
     init()
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
 
 
 @login_manager.user_loader
@@ -133,6 +121,14 @@ def task(id):
     db_sess = db_session.create_session()
     task = db_sess.query(Task).filter(Task.id == id).first()
     return render_template(f'tasks/{id}.html', task=task)
+
+
+@app.route('/theme_choice/type_work/tasks/solves/<int:id>')  # <int:id> – id задачи
+@login_required
+def solve(id):
+    db_sess = db_session.create_session()
+    task = db_sess.query(Task).filter(Task.id == id).first()
+    return render_template(f'solves/{id}.html', task=task)
 
 
 if __name__ == '__main__':
