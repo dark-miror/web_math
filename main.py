@@ -112,7 +112,10 @@ def theory(id):
 def task_choice(id):
     db_sess = db_session.create_session()
     tasks = db_sess.query(Task).filter(Task.theme_id == id).all()
-    return render_template('tasks.html', tasks=tasks)
+    user = db_sess.query(User).filter(current_user.id == User.id).first()
+    good_tasks = list(map(int, user.tasks.split()))
+    wrong_tasks = list(map(int, user.wrong_tasks.split()))
+    return render_template('tasks.html', tasks=tasks, good_tasks=good_tasks, wrong_tasks=wrong_tasks)
 
 
 @app.route('/theme_choice/type_work/tasks/task/<int:id>')  # <int:id> – id задачи
@@ -137,8 +140,8 @@ def right_wrong(id, right):
     db_sess = db_session.create_session()
     user = db_sess.query(User).filter(current_user.id == User.id).first()
     task = db_sess.query(Task).filter(Task.id == id).first()
-    tasks = list(map(int, user.tasks.split()))[:-1]
-    wrong_tasks = list(map(int, user.wrong_tasks.split()))[:-1]
+    tasks = list(map(int, user.tasks.split()))
+    wrong_tasks = list(map(int, user.wrong_tasks.split()))
     if id not in tasks:
         if right:
             user.tasks += f'{id} '
@@ -147,7 +150,9 @@ def right_wrong(id, right):
                 user.wrong_tasks = ' '.join(list(map(str, wrong_tasks))) + ' '
         elif id not in wrong_tasks:
             user.wrong_tasks += f'{id} '
-    redirect(f'/theme_choice/type_work/tasks/{task.theme_id}')
+        db_sess.add(user)
+        db_sess.commit()
+    return redirect(f'/theme_choice/type_work/tasks/{task.theme_id}')
 
 
 if __name__ == '__main__':
