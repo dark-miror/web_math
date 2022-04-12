@@ -1,3 +1,4 @@
+import wrong as wrong
 from flask import Flask, render_template, redirect, request, abort, make_response, jsonify
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
@@ -129,6 +130,25 @@ def solve(id):
     db_sess = db_session.create_session()
     task = db_sess.query(Task).filter(Task.id == id).first()
     return render_template(f'solves/{id}.html', task=task)
+
+
+@app.route('/theme_choice/type_work/tasks/solves/<int:id>/<int:right>')  # <int:id> – id задачи
+@login_required
+def solve(id, right):
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(current_user.id == User.id).first()
+    task = db_sess.query(Task).filter(Task.id == id).first()
+    tasks = list(map(int, user.tasks.split()))[:-1]
+    wrong_tasks = list(map(int, user.wrong_tasks.split()))[:-1]
+    if id not in tasks:
+        if right:
+            user.tasks += f'{id} '
+            if id in wrong_tasks:
+                del wrong_tasks[wrong_tasks.index(id)]
+                user.wrong_tasks = ' '.join(list(map(str, wrong_tasks))) + ' '
+        elif id not in wrong_tasks:
+            user.wrong_tasks += f'{id} '
+    redirect(f'/theme_choice/type_work/tasks/{task.theme_id}')
 
 
 if __name__ == '__main__':

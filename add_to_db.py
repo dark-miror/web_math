@@ -44,11 +44,12 @@ def new_class(number):
     db_sess.commit()
 
 
-def new_user(name, surname, about, email, password, tasks=""):
+def new_user(name, surname, about, email, password, tasks="", wrong_tasks=""):
     user = User()
     user.name = name
     user.surname = surname
     user.tasks = tasks
+    user.wrong_tasks = wrong_tasks
     user.about = about
     user.email = email
     user.set_password(password)
