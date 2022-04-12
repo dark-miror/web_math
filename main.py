@@ -1,4 +1,3 @@
-import wrong as wrong
 from flask import Flask, render_template, redirect, request, abort, make_response, jsonify
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
@@ -134,7 +133,7 @@ def solve(id):
 
 @app.route('/theme_choice/type_work/tasks/solves/<int:id>/<int:right>')  # <int:id> – id задачи
 @login_required
-def solve(id, right):
+def right_wrong(id, right):
     db_sess = db_session.create_session()
     user = db_sess.query(User).filter(current_user.id == User.id).first()
     task = db_sess.query(Task).filter(Task.id == id).first()
