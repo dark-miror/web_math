@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-warning">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">1) \(4(2-3m)-(6-m)-2(3m+4)=-17m-6\);</span></p>
+    <p><span class="math inline">&emsp;Упростим левую часть:</span></p>
+    <p><span class="math inline">&emsp;\(50x+80x+320=385\);</span></p>
+    <p><span class="math inline">&emsp;\(4(2-3m)-(6-m)-2(3m+4)=8-12m-6+m-6m+8=-17m-6\);</span></p>
+    <p><span class="math inline">&emsp;Тождество доказано.</span></p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">2) \(a+b-10ab=2a(3-b)-3b(a-2)-5(ab+a+b)\);</span></p>
+    <p><span class="math inline">&emsp;Рассмотрим разность левой и правой частей:</span></p>
+    <p><span class="math inline">&emsp;\(a+b-10ab-(2a(3-b)-3b(a-2)-5(ab+a+b))\) =</span></p>
+    <p><span class="math inline">&emsp;= \(a+b-10ab-(6a-2ab-3ab+6b-5ab-5a-5b)\) =</span></p>
+    <p><span class="math inline">&emsp;= \(-10a+2ab+3ab+5ab+b+a-6a+5a+b-6b+5b\) = \(0\);</span></p>
+    <p><span class="math inline">&emsp;Тождество доказано.</span></p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">3) \(6(5a-3)+(10-20a)-(6a-4)=5a-(3a-(2a-4))\);</span></p>
+    <p><span class="math inline">&emsp;Упростим и левую и правую часть:</span></p>
+    <p><span class="math inline">&emsp;\(30a-18+10-20a-6a+4=5a-3a+2a-4\);</span></p>
+    <p><span class="math inline">&emsp;\(4a-4=4a-4\);</span></p>
+    <p><span class="math inline">&emsp;Тождество доказано.</span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-danger">Не верно</a><br>
+<br>
+{% endblock %}

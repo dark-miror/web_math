@@ -2,12 +2,16 @@
 
 {% block content %}
 
-<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-warning">Вернуться</a><br>
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-warning">Вернуться</a>
+<br>
+<br>
 
-<br><h4>Решите уравнения:</h4>
-<h5><span class="math inline">1) \(||x|-3|=5\);</span></h5>
-<h5><span class="math inline">2) \(\frac{4x^2+5x}{14}+\frac{10-2x^2}{7}=5\);</span></h5>
-<h5><span class="math inline">3) \(\frac{x}{7}+\frac{3x-1}{14}=\frac{x}{3}\).</span></h5>
+<div class="alert alert-secondary" role="alert">
+    <p>Решите уравнения:</p>
+    <p><span class="math inline">1) \(||x|-3|=5\);</span></p>
+    <p><span class="math inline">2) \(\frac{4x^2+5x}{14}+\frac{10-2x^2}{7}=5\);</span></p>
+    <p><span class="math inline">3) \(\frac{x}{7}+\frac{3x-1}{14}=\frac{x}{3}\).</span></p>
+</div>
 
 <a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
 

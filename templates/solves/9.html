@@ -2,27 +2,37 @@
 
 {% block content %}
 
-<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-warning">Вернуться</a><br>
-
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-warning">Вернуться</a>
 <br>
-<p><span class="math inline">1) Обозначим за \(x\) ч - время, которое потратил грузовой автомобиль до встречи. Время легкового автомобиля тогда \(x+4\) ч. Теперь, \(50x\) км - рассотяние которое проехал грузовой автомобиль, а \(80(x+4)\) км - легковой. Всего получаем \(50x+80(x+4)\) км - суммарное пройденное расстояние, что по условию равно \(385\).</span></p>
-<p><span class="math inline">&emsp;Таким образом, получаем уравнение \(50x+80(x+4)=385\);</span></p>
-<p><span class="math inline">&emsp;&emsp;\(50x+80x+320=385\);</span></p>
-<p><span class="math inline">&emsp;&emsp;\(130x=65\);</span></p>
-<p><span class="math inline">&emsp;&emsp;\(x=0.5\).</span></p>
-<p><span class="math inline">&emsp;Получили, что грузовой автомобиль ехал \(0.5\) ч, тогда легковой ехал \(0.5+4=4.5\) ч.</span></p>
-<p><span class="math inline">&emsp;Ответ: 30 минут и 4.5 часа.</span></p>
+<br>
 
-<p><span class="math inline">2) Обозначим за \(x\) - количество дней, которое рабочий плнировал потратить, тогда \(x-2\) дня он потратил на самом деле. Таким образом, он планировал изготовить \(20x\) деталей, а изготовил \(28(x-2)\) детали, что на 8 больше по услови.</span></p>
-<p><span class="math inline">&emsp;Таким образом, получаем уравнение \(20x+8=28(x-2)\);</span></p>
-<p><span class="math inline">&emsp;&emsp;\(20x+8=28x-56\);</span></p>
-<p><span class="math inline">&emsp;&emsp;\(-8x=-64\);</span></p>
-<p><span class="math inline">&emsp;&emsp;\(x=8\).</span></p>
-<p><span class="math inline">&emsp;Получили, что он планировал выполнить работу за 6 дней.</span></p>
-<p><span class="math inline">&emsp;Ответ: 8 дней.</span></p>
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">1) Обозначим за \(x\) ч - время, которое потратил грузовой автомобиль до встречи. Время легкового автомобиля тогда \(x+4\) ч. Теперь, \(50x\) км - рассотяние которое проехал грузовой автомобиль, а \(80(x+4)\) км - легковой. Всего получаем \(50x+80(x+4)\) км - суммарное пройденное расстояние, что по условию равно \(385\).</span>
+    </p>
+    <p><span class="math inline">&emsp;Таким образом, получаем уравнение \(50x+80(x+4)=385\);</span>
+    </p>
+    <p><span class="math inline">&emsp;&emsp;\(50x+80x+320=385\);</span></p>
+    <p><span class="math inline">&emsp;&emsp;\(130x=65\);</span></p>
+    <p><span class="math inline">&emsp;&emsp;\(x=0.5\).</span></p>
+    <p><span class="math inline">&emsp;Получили, что грузовой автомобиль ехал \(0.5\) ч, тогда легковой ехал \(0.5+4=4.5\) ч.</span>
+    </p>
+    <p><span class="math inline">&emsp;Ответ: 30 минут и 4.5 часа.</span></p>
+</div>
 
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">2) Обозначим за \(x\) - количество дней, которое рабочий плнировал потратить, тогда \(x-2\) дня он потратил на самом деле. Таким образом, он планировал изготовить \(20x\) деталей, а изготовил \(28(x-2)\) детали, что на 8 больше по услови.</span>
+    </p>
+    <p><span class="math inline">&emsp;Таким образом, получаем уравнение \(20x+8=28(x-2)\);</span>
+    </p>
+    <p><span class="math inline">&emsp;&emsp;\(20x+8=28x-56\);</span></p>
+    <p><span class="math inline">&emsp;&emsp;\(-8x=-64\);</span></p>
+    <p><span class="math inline">&emsp;&emsp;\(x=8\).</span></p>
+    <p><span class="math inline">&emsp;Получили, что он планировал выполнить работу за 6 дней.</span>
+    </p>
+    <p><span class="math inline">&emsp;Ответ: 8 дней.</span></p>
+</div>
 
-<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-success">Верно</a>
 <a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-danger">Не верно</a><br>
 <br>
 {% endblock %}
