@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-secondary">Вернуться</a>
+<br><br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p>Найдите в данных примерах ошибки:<br>
+            &emsp;1) \(a^4a^3=a^{12}\);<br>
+            &emsp;2) \(a*a=2a\);<br>
+            &emsp;3) \((a^3)^2=a^9\);<br>
+            &emsp;4) \(3^2*5^2=15^4\);<br>
+            &emsp;5) \(2^2*7^3=14^5\);<br>
+            &emsp;6) \((2a)^4=8a^4\);<br>
+            &emsp;7) \(3*4^3=12^3\);<br>
+            &emsp;8) \(a^7b^7=(ab)^{14}\);<br>
+            &emsp;9) \(a^3b^2=(ab)^6\).
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

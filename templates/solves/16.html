@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p>1) \(10^{100}=100…000\) (100 нулей). \(10^{100}+8=1000…0008\) (99 нулей).
+            Сумма цифр равна \(9\), значит это число делится на \(9\).<br>
+            2) \(111^n\) заканчивается на \(1\), тогда \(111^n–6\) заканчивается на \(5\), а значит
+            и делится на \(5\).
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

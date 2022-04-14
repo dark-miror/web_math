@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-secondary">Вернуться</a>
+<br><br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p>Докажите, что значение выражения:<br>
+            &emsp;1) \(17^8+19\) делится нацело на 10;<br>
+            &emsp;2) \(64^{64}–1\) делится нацело на 5;<br>
+            &emsp;3) \(3^{4n}+14\), где n – натуральное число, делится нацело на \(5\).
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

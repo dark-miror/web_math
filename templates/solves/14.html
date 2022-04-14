@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p>1) \(8^2–1^10=64–1=63\)<br>
+            2) \(0.3*2^4=0.3*16=4.2\)<br>
+            3) \((4.2–3.8)^4*25^2=0.4^4*5*5*5*5=2*2*2*2=16\)<br>
+            4) \((6^3:200–0.4^2):0.2^3=460\)
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

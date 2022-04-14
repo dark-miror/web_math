@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p>1) Чтобы \(10–x^2\) было как можно больше, \(x^2\) должен был как можно меньше.
+            Любое число в четной степени неотрицательно, значит \(x^2\ge0\), тогда \(10–x^2\ge10\).
+            А \(10–x^2=10\) только тогда, когда \(x^2=0\), то есть когда \(x=0\).<br>
+            2) Аналогично \(24–(x+3)^6\ge24\). А \((x + 3)^6=0\), когда \(x+3=0\), тогда \(x=-3\).
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}
