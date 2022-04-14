@@ -118,11 +118,26 @@ def task_choice(id):
     return render_template('tasks.html', tasks=tasks, good_tasks=good_tasks, wrong_tasks=wrong_tasks)
 
 
-@app.route('/theme_choice/type_work/tasks/task/<int:id>')  # <int:id> – id задачи
+@app.route('/theme_choice/type_work/tasks/task/<int:id>', methods=['GET', 'POST'])  # <int:id> – id задачи
 @login_required
 def task(id):
     db_sess = db_session.create_session()
     task = db_sess.query(Task).filter(Task.id == id).first()
+    user = db_sess.query(User).filter(current_user.id == User.id).first()
+    tasks = list(map(int, user.tasks.split()))
+    wrong_tasks = list(map(int, user.wrong_tasks.split()))
+    if request.method == 'POST':
+        if id not in tasks:
+            if int(request.form.get('answers')) == task.task_test:
+                user.tasks += f'{id} '
+                if id in wrong_tasks:
+                    del wrong_tasks[wrong_tasks.index(id)]
+                    user.wrong_tasks = ' '.join(list(map(str, wrong_tasks))) + ' '
+            elif id not in wrong_tasks:
+                user.wrong_tasks += f'{id} '
+            db_sess.add(user)
+            db_sess.commit()
+        return redirect(f'/theme_choice/type_work/tasks/{task.theme_id}')
     return render_template(f'tasks/{id}.html', task=task)
 
 
@@ -136,7 +151,7 @@ def solve(id):
 
 @app.route('/theme_choice/type_work/tasks/solves/<int:id>/<int:right>')  # <int:id> – id задачи
 @login_required
-def right_wrong(id, right):
+def right_wrong(id, right):  # для задач с развернутым решением
     db_sess = db_session.create_session()
     user = db_sess.query(User).filter(current_user.id == User.id).first()
     task = db_sess.query(Task).filter(Task.id == id).first()
