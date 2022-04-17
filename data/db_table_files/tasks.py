@@ -10,4 +10,4 @@ class Task(SqlAlchemyBase):
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     title = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     theme_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("themes.id"), nullable=True)
-    task_test = sqlalchemy.Column(sqlalchemy.Boolean, nullable=False)
+    task_test = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)

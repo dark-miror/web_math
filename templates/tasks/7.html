@@ -8,12 +8,29 @@
 <div class="alert alert-secondary" role="alert">
     <p>Килограмм огурцов на 4р. дешевле килограмма помидоров. Сколько стоит 1 кг помидоров, если за
         3.2 кг помидоров заплатили столько же, сколько за 3.6 кг огурцов?</p>
-    <p><span class="math inline">\(32\)</span></p>
-    <p><span class="math inline">\(36\)</span></p><!--correct-->
-    <p><span class="math inline">\(4\)</span></p>
-    <p><span class="math inline">\(16\)</span></p>
-</div>
+    <form action="/theme_choice/type_work/tasks/task/{{task.id}}" method="POST" class="form-check">
+        <input class="form-check-input" type="radio" id="flexRadioDefault1" name="answers" value="1">
+        <label class="form-check-label math inline" for="flexRadioDefault1">
+            \(32\)
+        </label> <br> <br>
 
-<a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-warning">Ответить</a><br>
+        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="answers" value="2">
+        <label class="form-check-label math inline" for="flexRadioDefault2">
+           \(36\)
+        </label> <br> <br> <!--correct-->
+
+        <input class="form-check-input" type="radio" id="flexRadioDefault3" name="answers" value="3">
+        <label class="form-check-label math inline" for="flexRadioDefault3">
+            \(4\)
+        </label> <br> <br>
+
+        <input class="form-check-input" type="radio" id="flexRadioDefault4" name="answers" value="4">
+        <label class="form-check-label math inline" for="flexRadioDefault4">
+            \(16\)
+        </label> <br> <br>
+
+        <input class="btn btn-primary" type="submit">
+    </form>
+</div>
 
 {% endblock %}

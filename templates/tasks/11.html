@@ -8,11 +8,30 @@
 <div class="alert alert-secondary" role="alert">
     <p>Является ли тождеством выражение</p>
     <p><span class="math inline">&emsp;\(-2(x-4)=-2x-8\)</span>?</p>
-    <p><span class="math inline">Да.</span></p>
-    <p><span class="math inline">Нет.</span></p>  <!--correct-->
-    <p><span class="math inline">Невозможно оперделить.</span></p>
-    <p><span class="math inline">Я не знаю.</span></p>
+
+    <form action="/theme_choice/type_work/tasks/task/{{task.id}}" method="POST" class="form-check">
+        <input class="form-check-input" type="radio" id="flexRadioDefault1" name="answers" value="1">
+        <label class="form-check-label math inline" for="flexRadioDefault1">
+            Да.
+        </label> <br> <br>
+
+        <input class="form-check-input" type="radio" id="flexRadioDefault2" name="answers" value="2">
+        <label class="form-check-label math inline" for="flexRadioDefault2">
+           Нет.
+        </label> <br> <br> <!--correct-->
+
+        <input class="form-check-input" type="radio" id="flexRadioDefault3" name="answers" value="3">
+        <label class="form-check-label math inline" for="flexRadioDefault3">
+            Невозможно оперделить.
+        </label> <br> <br>
+
+        <input class="form-check-input" type="radio" id="flexRadioDefault4" name="answers" value="4">
+        <label class="form-check-label math inline" for="flexRadioDefault4">
+            Я не знаю.
+        </label> <br> <br>
+
+        <input class="btn btn-primary" type="submit">
+    </form>
 </div>
-<a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-warning">Ответить</a><br>
 
 {% endblock %}

@@ -126,7 +126,7 @@ def task(id):
     user = db_sess.query(User).filter(current_user.id == User.id).first()
     tasks = list(map(int, user.tasks.split()))
     wrong_tasks = list(map(int, user.wrong_tasks.split()))
-    if request.method == 'POST':
+    if request.method == 'POST':  # проверка правильности для задач с выбором ответа
         if id not in tasks:
             if int(request.form.get('answers')) == task.task_test:
                 user.tasks += f'{id} '
