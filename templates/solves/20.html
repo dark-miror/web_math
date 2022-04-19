@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p> 1) \((3a^2b)^2=9a^4b^2\)<br>
+            2) \((-0.2x^3y^4)^3=-0.008x^9y^12\)<br>
+            3) \((-10m^2y^8)^5=-10000m^10y^{40}\)<br>
+            4) \((16x^6y^7z^8)^2=256x^{12}y^{14}z^{16}\)<br>
+            5) \((-\frac{1}{5}c^6d)^4=\frac{1}{125}c^{24}d^4\)<br>
+            6) \((1\frac{1}{2}a^8b^9)^6=11\frac{25}{64}a^{48}b^{54}\)
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

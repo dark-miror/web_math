@@ -2,8 +2,161 @@
 
 {% block content %}
 
-<a href="/theme_choice/type_work/{{theme_id}}" class="btn btn-warning">Вернуться</a><br>
+<br>
+<h4>
+    <center>Одночлены и многочлены.</center>
+</h4>
 
-<a href="/theme_choice/type_work/{{theme_id}}" class="btn btn-warning">Вернуться</a>
+<a href="/theme_choice/type_work/{{theme_id}}" class="btn btn-secondary">Вернуться</a><br><br>
+
+<div class="alert alert-info" role="alert">
+    <p><span class="math inline">Одночлен – произведение чисел, переменных и их степеней.</span>
+    </p>
+</div>
+
+<div class="alert alert-info" role="alert">
+    <p><span class="math inline">Стандартный вид многочлена – многочлен, содержащий только один
+        числовой множитель, отличный от нуля и стоящий на первом месте, а все остальные множители –
+        это степени с различными основаниями.</span></p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">Числовой множитель одночлена, записанного в стандартном виде,
+        называют коэффициентом одночлена.</span>
+    </p>
+</div>
+
+<div class="alert alert-info" role="alert">
+    <p><span class="math inline">Степенью одночлена называют сумму показателей степеней всех
+        переменных, входящих в него. Степень одночлена, который является числом, отличным от нуля,
+        считают равной нулю.
+    </span></p>
+</div>
+
+<div class="alert alert-warning" role="alert">
+    <p><span class="math inline">Пример 1:<br>
+        &emsp;Упростите выражение \(0.2a^2b^4*(-5a^3b)^2\).<br>
+        Решение:<br>
+        &emsp;\(0.2a^2b^4*(-5a^3b)^2=0.2a^2b^4*(-5)^2*(a^3)^2b^2=0.2a^2b64*25a^6b^2=0.2*25a^2a^6b^4b^2=5a^8b^6\)
+    </span></p>
+</div>
+
+<div class="alert alert-info" role="alert">
+    <p><span class="math inline">Выражение, которое является суммой нескольких одночленов, называют
+        многочленом. В частности, многочлен, состоящий из двух одночленов, называют двучленом, а из
+        трёх – трёхчленом.</span></p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">Примеры многочленов:<br>
+        &emsp;\(7xy+y-11\)<br>
+        &emsp;\(x^4-2x^3+5x^2-x+1\)<br>
+        &emsp;\(3a-a+b\)<br>
+        &emsp;\(11x-2x\)
+    </span></p>
+</div>
+
+<div class="alert alert-info" role="alert">
+    <p><span class="math inline">Многочлен, состоящий и одночленов стандартного вида, среди которых
+        нет подобных, называют многочленом стандартного вида.</span></p>
+</div>
+
+<div class="alert alert-info" role="alert">
+    <p><span class="math inline">Степенью многочлена стандартного вида называют наибольшую из
+        степеней одночленов, из которых составлен этот многочлен.</span></p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">Примеры многочленов стандартного вида:<br>
+        &emsp;1) \(3x^2-xy+5y^2\) – степень равна двум<br>
+        &emsp;2) \(3x^4y^2\) – степень равна шести<br>
+        &emsp;3) \(3\) – степень равна нулю
+    </span></p>
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+    <p><span class="math inline">Пример 2:<br>
+        &emsp;Докажите, что значение выражения \(9^n–1\) делится нацело на \(10\) при любом чётном значении \(n\).<br>
+        Решение:<br>
+        &emsp;Если \(n\) – чётное число, то выражение \(9^n\) можно представить в виде произведения,
+        содержащего чётное количество девяток. Тогда можно записать \(9^n=(9 * 9)(9 * 9)…(9 * 9)\).
+        Поскольку \(9*9=81\), то последней цифрой этого выражения \(9^n–1\) является ноль.
+        Следовательно, значение выражения \(9^n-1\) делится нацело на \(10\) при любом четном значении \(n\).
+    </span></p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <p><span class="math inline">Рассмотрим произведение двух степеней с одинаковыми основаниями,
+        например \(a^2a^5=(aa)(aaaaa)=aaaaaaa=a^7\).<br>
+        &emsp;Значит \(a^2a^5=a^(2+5)\).
+    </span></p>
+</div>
+
+<div class="alert alert-success" role="alert">
+    <p><span class="math inline">Теорема:<br>
+        &emsp;Для любого числа \(a\) натуральных чисел \(m\) и \(n\) справедливо равенство: \(a^na^m=a^{(n+m)}\).<br>
+        Доказательство:<br>
+        &emsp;\(a^na^m=(aa..aa)(n\,штук) * (aa..a)(m\,штук)=aaa…aa(n+m\,штук)=a^{(n+m)}\).
+    </span></p>
+</div>
+
+<div class="alert alert-success" role="alert">
+    <p><span class="math inline">Теорема:<br>
+        &emsp;Для любого числа \(a\), отличного от \(0\), и любых чисел \(m\) и \(n\) таких, что \(m>n\),
+        справедливо равенство: \(a^m:a^n=a^{(m–n)}\).<br>
+        Доказательство:<br>
+        &emsp;Рассмотрим произведение степеней \(a^n\) и \(a^{m–n}\). Используя теорему, доказанную
+        ранее, имеем: \(a^na^{m-n}=a^{n+(m–n)}=a^m\).
+    </span></p>
+</div>
+
+<div class="alert alert-success" role="alert">
+    <p><span class="math inline">Теорема:<br>
+        &emsp;Для любых чисел \(a\) и \(b\) и любого натурального \(n\) справедливо равенство: \((ab)^n=a^nb^n\).<br>
+        Доказательство:<br>
+        &emsp;\((ab)^n=(ab)(ab)...(ab)(n\,штук)=(aa...a)(n\,штук) * (bb...b)(n\,штук)=a^nb^n\).
+    </span></p>
+</div>
+
+<div class="alert alert-success" role="alert">
+    <p><span class="math inline">Теорема:<br>
+        &emsp;Для любых чисел \(a\) и \(b\) и любого натурального \(n\) справедливо равенство: \((a^m)^n=a^{mn}\).<br>
+        Доказательство:<br>
+        &emsp;\((a^m)^n=(a^ma^ma^m...a^m) (n\,штук)=a^{(m + m + … + m)(n\,штук)}=a^{mn}\).
+    </span></p>
+</div>
+
+<div class="alert alert-warning" role="alert">
+    <p><span class="math inline">Пример 3:<br>
+        &emsp;Упростите выражение:<br>
+        &emsp;&emsp;1) \((a^5)^2(a^6)^7\)<br>
+        &emsp;&emsp;2) \((-a^4)^9\)<br>
+        &emsp;&emsp;3) \((-a^4)^8\)<br>
+        Решение:<br>
+        &emsp;&emsp;1) \((a^5)^2(a^6)^7=a^{10}a^{42}=a^{52}\)<br>
+        &emsp;&emsp;2) \((-a^4)^9=(-1)^9a^{36}=-a^{36}\)<br>
+        &emsp;&emsp;3) \((-a^4)^8=(-1)^8(a^4)^8=1a^{32}=a^{32}\)
+    </span></p>
+</div>
+
+<div class="alert alert-warning" role="alert">
+    <p><span class="math inline">Пример 4:<br>
+        &emsp;Сравните значения выражений:<br>
+        &emsp;&emsp;1) \((-11)^{14}(-11)^3\) и \((-11)^{16}\)<br>
+        &emsp;&emsp;2) \((-12)^{19}\) и \((-12)^{15}\)<br>
+        &emsp;&emsp;3) \(5^{30}\) и \(9^{20}\)<br>
+        &emsp;&emsp;4) \(16^3\) и \(65^2\)<br>
+        Решение:<br>
+        &emsp;&emsp;1) \((-11)^{14}(-11)^3=(-11)^{17}\). \((-11)^{17}<0\), а \((-11)^{16}>0\). Тогда \((-11)^{16}>(-11)^{17}\).<br>
+        &emsp;&emsp;2) \(|(-12)^{19}|>|(-12)^{15}|\); \((-12)^{19}<0\) и \((-12)^{15}<0\). Тогда \((-12)^{15}>(-12)^{19}\).<br>
+        &emsp;&emsp;3) Так как \(5^30=(5^3)^{10}=125^{10}\) и \(9^{20}=(9^2)^{10}=81^{10}\), то \(5^{30}>9^{20}\).<br>
+        &emsp;&emsp;4) Имеем: \(16^3=(4^2)^3=(4^3)^2=64^2\). Следовательно, \(16^3<65^2\).
+    </span></p>
+</div>
+
+
+<a href="/theme_choice/type_work/{{theme_id}}" class="btn btn-secondary">Вернуться</a>
 <br><br>
 {% endblock %}

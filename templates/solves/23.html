@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p> &emsp;1) \(4b^2+a^2+9ab-18b^2-9ab=a^2-14b^2\) – степень равна \(2\)<br>
+            &emsp;2) \(8m^3-13mn-9n^2-8m^3-2mn=-15mn-9n^2\) – степень равна \(2\)<br>
+            &emsp;3) \(2a^2b-7ab^2-3a^2b+2ab^2=-a^2b-5ab^2\) – степень равна \(3\)<br>
+            &emsp;4) \(0.9c^4+1.1c^2+c^4-0.6c^2=1,9c^4-0.5c^2\) – степень равна \(4\)<br>
+            &emsp;5) \(3x^2+6-5-x^2-10x+3=2x^2-4x-2\) – степень равна \(2\)<br>
+            &emsp;6) \(b^3-3bc+3b^3+8bc-4b^3=-2x^2y+xy^2-xy+7\) – степень равна \(3\)
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}
