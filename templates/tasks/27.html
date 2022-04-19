@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-secondary">Вернуться</a>
+<br><br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Упростите:<br>
+        &emsp;1) \(8x-2x(3x+4)\)<br>
+        &emsp;2) \(7a^2+3a(9-5a)\)<br>
+        &emsp;3) \(6x(4x-7)-12(2x^2+1)\)<br>
+        &emsp;4) \(2m(m-3n)+m(5m+11n)\)<br>
+        &emsp;5) \(c(c^2-1)+c^2(c-1)\)<br>
+        &emsp;6) \(8x(x^2+y^2)-9x(x^2-y^2)\)<br>
+        &emsp;7) \(5b^3(2b-3)-2.5b^3(4b-6)\)<br>
+        &emsp;8) \(x(5x^2+6x+8)-4x(2+2x+x^2)\)
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

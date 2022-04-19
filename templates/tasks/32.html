@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-secondary">Вернуться</a>
+<br><br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>При всех ли натуральных значениях n значение выражения
+        \((n+9)(n+11)-(n+3)(n+5)\) кратно \(12\)?
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

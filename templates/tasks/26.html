@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-secondary">Вернуться</a>
+<br><br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Докажите, что:<br>
+        &emsp;1) Сумма пяти последовательных натуральных чисел делится нацело на \(5\).<br>
+        &emsp;2) Сумма трех последовательных четных натуральных чисел делится нацело на \(6\).<br>
+        &emsp;3) Сумма четырех последовательных нечетных натуральных чисел делится нацело на \(8\).<br>
+        &emsp;4) Сумма четырех последовательных натуральных чисел не делится нацело на \(4\).<br>
+        &emsp;5) Остаток от деления на \(6\) суммы шести последовательных натуральных чисел равен \(3\).
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

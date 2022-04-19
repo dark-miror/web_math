@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline">
+        <p> 1) \((a^2+b^2–c^2)-(b^2+c^2-a^2)+(c^2-a^2)=a^2+b^2-c^2-b^2-c^2+a^2+c^2-a^2=a^2-c^2\)<br>
+            2) \((4-3a^2)-a^2+(7+2a^2)-(-2a^2+11)=4-3a^2-a^2+7+2a^2+2a^2-11=0\)<br>
+            3) \((x^3+4x^2)-(x+6)+(1+x-x^3)=x^3+4x^2-x-6+1+x-x^3=4x^2-5\)
+        </p>
+    </span>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Заметим, что если в многочлен стандартного вида вместо переменной
+      подставить \(1\) и найти значение полученного выражения, то мы получим сумму коэффициентов
+      этого многочлена. А так как этот многочлен равен начальному выражению \((4x^{15}+3x-6)^{15}\),
+      то и при \(x=1\) значение не изменится. Тогда подставим \(x=1\) и получим
+      \((4x^{15}+3x-6)^{15}=(4^{15}+3-6)^{15}=1^{15}=1\).
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

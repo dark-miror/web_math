@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Имеем:<br>
+        &emsp;\(a(b-c)=b(c-a)\)<br>
+        &emsp;\(a(b-c)=c(a-b)\)<br>
+        &emsp;\(b(c-a)=c(a-b)\)<br><br>
+        &emsp;\(ab-ac=bc-ab\)<br>
+        &emsp;\(ab-ac=ac-bc\)<br>
+        &emsp;\(bc-ab=ac-bc\)<br>
+        &emsp;Сложим последние 2 выражения:<br>
+        &emsp;\(bc-ac=2ac-2bc\)<br>
+        &emsp;\(bc-ac=-2(bc-ac)\)<br>
+        &emsp;\(bc-ac=0\)<br>
+        &emsp;\((b-a)c=0\)<br>
+        &emsp;\(c=0\)<br>
+        &emsp;Аналогично, можем получить, что \(a=0\) и \(b=0\). Но в таком случае все числа одинаковые, что противоречит условию.
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

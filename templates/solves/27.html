@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Решение:<br>
+        &emsp;1) \(8x-2x(3x+4)=8x-6x^2-8x=-6x^2\)<br>
+        &emsp;2) \(7a^2+3a(9-5a)=7a^2+27a-15a^2=-8a^2+27a\)<br>
+        &emsp;3) \(6x(4x-7)-12(2x^2+1)=24x^2-42x-24x^2-12=-42x-12\)<br>
+        &emsp;4) \(2m(m-3n)+m(5m+11n)=2m^2-6mn+5m^2+11mn=7m^2+5mn\)<br>
+        &emsp;5) \(c(c^2-1)+c^2(c-1)=c^3-c+c^3-c^2=2c^3-c^2-c\)<br>
+        &emsp;6) \(8x(x^2+y^2)-9x(x^2-y^2)=8x^3+8xy^2-9x^3+9xy^2=-x^3+17xy^2\)<br>
+        &emsp;7) \(5b^3(2b-3)-2.5b^3(4b-6)=10b^4-15b^3-10b^4+15b^3=0\)<br>
+        &emsp;8) \(x(5x^2+6x+8)-4x(2+2x+x^2)=5x^3+6x^2+8x-8x-8x^2-4x^3=x^3-2x^2\)<br>
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}

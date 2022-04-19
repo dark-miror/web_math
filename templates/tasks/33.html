@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/{{task.theme_id}}" class="btn btn-secondary">Вернуться</a>
+<br><br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Выражение \((4x^{15}+3x-6)^{15}\) представили в виде многочлена стандартного вида. Найдите сумму коэффициентов этого многочлена.
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}" class="btn btn-warning">Проверить</a><br>
+
+{% endblock %}

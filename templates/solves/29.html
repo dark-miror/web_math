@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><a href="/theme_choice/type_work/tasks/task/{{task.id}}" class="btn btn-secondary">Вернуться</a>
+<br>
+<br>
+
+<div class="alert alert-secondary" role="alert">
+    <span class="math inline"><p>Решение:<br>
+        &emsp;Представим число \(a\) в виде \(3n+1\), а число \(b\) в виде \(9m+7\), тогда
+        \(4a+2b=4(3n+1)+2(9m+7)\). Раскрыв скобки и приведя подобные слагаемые получим, что
+        \(4a+2b=12n+27m+18\), а так как все слагаемые данного выражения делятся на 3, то и само
+        выражение делится на 3, что и надо было доказать.
+    </span></p>
+</div>
+
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/1" class="btn btn-success">Верно</a>
+<a href="/theme_choice/type_work/tasks/solves/{{task.id}}/0" class="btn btn-danger">Не верно</a>
+<br><br>
+{% endblock %}
