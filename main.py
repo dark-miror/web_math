@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request, abort, make_response, jsonify
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from werkzeug.utils import secure_filename
+import os
 
 from data import db_session
 from data.db_table_files.users import User
@@ -70,8 +72,16 @@ def reqister():
         if db_sess.query(User).filter(User.email == form.email.data).first():
             return render_template('register.html', form=form,
                                    message="Такой пользователь уже есть")
-        new_user(form.name.data, form.surname.data, form.about.data, form.email.data,
+        new_user(form.name.data, form.surname.data, form.email.data,
                  form.password.data)
+        a = db_sess.query(User).filter(User.email == form.email.data).first()
+        if request.files['avatar']:
+            f = request.files['avatar']
+            f.save(f"static/img/avatars/{a.id}")
+            # print(f.read())
+            a.avatar = f"{a.id}"
+            db_sess.add(a)
+            db_sess.commit()
         return redirect('/login')
     return render_template('register.html', form=form)
 

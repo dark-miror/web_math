@@ -10,7 +10,7 @@ def init():
     # new_class(7)
     # new_class(8)
     # new_class(9)
-    # new_user("Anton", "Vityuk", "Кря!", "vityuka05@mail.ru", "1147labuda")
+    # new_user("Anton", "Vityuk", "vityuka05@mail.ru", "1147labuda", avatar="koks.jpg")
     # new_theme("Комбинаторка", 1)  # - пробное
     # new_task("a", 1, False)  # - пробное
     # new_theme("Линейное уравнение с одной переменной. Решение задач с помощью уравнений", 1)
@@ -44,13 +44,13 @@ def new_class(number):
     db_sess.commit()
 
 
-def new_user(name, surname, about, email, password, tasks="", wrong_tasks=""):
+def new_user(name, surname, email, password, tasks="", wrong_tasks="", avatar="koks.jpg"):
     user = User()
     user.name = name
     user.surname = surname
     user.tasks = tasks
     user.wrong_tasks = wrong_tasks
-    user.about = about
+    user.avatar = avatar
     user.email = email
     user.set_password(password)
     db_sess = db_session.create_session()

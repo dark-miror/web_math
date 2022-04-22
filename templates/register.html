@@ -3,7 +3,7 @@
 {% block content %}
 <h2>Register Form</h2>
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     <p>
         {{ form.email.label }}<br>
@@ -41,9 +41,9 @@
         {% endfor %}
     </p>
     <p>
-        {{ form.about.label }}<br>
-        {{ form.about(class="form-control") }}<br>
-        {% for error in form.about.errors %}
+        {{ form.avatar.label }}<br>
+        {{ form.avatar(class="form-control-file", type="file") }}<br>
+        {% for error in form.avatar.errors %}
             <p class="alert alert-danger" role="alert">
                 {{ error }}
             </p>
